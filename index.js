@@ -1,14 +1,22 @@
-const numbers = [456, 254, 56454, 4, 64, 5454, 5, 454, 11];
-
-const firstfunction = (param) => {
-  let max = numbers[0];
+const students = [
+  ["mamun", 245],
+  ["jeo", 524],
+  ["rakib", 215],
+  ["musfiqure", 448],
+  ["james", 4545],
+  ["docteso", 41],
+  ["juliea", 54],
+];
+const secondfunction = (param) => {
+  let max = students[0][0];
+  let hight = students[0][1];
   for (let x = 1; x < param.length; x++) {
-    if (max < numbers[x]) {
-      max = numbers[x];
+    if (hight < students[x][1]) {
+      hight = students[x][1];
+      max = students[x][0];
     }
   }
   return max;
 };
-const answares = firstfunction(numbers);
-
-console.log(answares);
+const answers = secondfunction(students);
+console.log(answers);
