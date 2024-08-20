@@ -1,22 +1,17 @@
-const students = [
-  ["mamun", 245],
-  ["jeo", 524],
-  ["rakib", 215],
-  ["musfiqure", 448],
-  ["james", 4545],
-  ["docteso", 41],
-  ["juliea", 54],
-];
-const secondfunction = (param) => {
-  let max = students[0][0];
-  let hight = students[0][1];
-  for (let x = 1; x < param.length; x++) {
-    if (hight < students[x][1]) {
-      hight = students[x][1];
-      max = students[x][0];
-    }
-  }
-  return max;
-};
-const answers = secondfunction(students);
-console.log(answers);
+const images = ["img/img1.jpg", "img/img2.jpg", "img/img3.jpg"];
+const slide = document.querySelector("#slide");
+let count = 0;
+
+function showSlide(inde) {
+  slide.src = images[inde];
+}
+
+function nextSlide(params) {
+  count = (count + 1) % images.length;
+  showSlide(count);
+}
+
+function prevSlide(params) {
+  count = (count - 1 + images.length) % images.length;
+  showSlide(count);
+}
